@@ -13,4 +13,4 @@ Files:
 - `demo.py`: Use calculated feature importances to visualize feature importance distributions for a given KO
 - `EigenProPytorch/`: Batched https://github.com/EigenPro/EigenPro-pytorch implementation modified for this specific problem
 
-Feel free to direct any questions to caic@mit.edu. 
+Feel free to direct any questions about the code to caic@mit.edu. 
