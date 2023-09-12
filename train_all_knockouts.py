@@ -114,7 +114,12 @@ def get_feature_importances():
             ind = np.abs(zscore(cell_embedding[x].values)) < 3
             r = np.corrcoef([cell_embedding[x].values[ind], sub_y.flatten()[ind]])[0,1]
 
-            # want positive correlation for expression features and negative correlation for mutation features
+            # want positive correlation for expression features and negative correlation for mutation features. 
+            # expression features have _exp appended.
+            if "_" in x:
+                r = np.corrcoef([embedding[x].values[ind], sub_y.flatten()[ind]])[0,1]
+            else:
+                r = np.corrcoef([embedding[x].values, sub_y.flatten()])[0,1]
             if ("_" in x and r >= 0) or ("_" not in x and r <= 0):
                 M_i[j] *= abs(r)
             else:
